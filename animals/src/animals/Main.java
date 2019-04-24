@@ -83,5 +83,12 @@ public class Main
                 System.out.print(a);
             }
         });
+
+        System.out.println("*** All Mamals ***");
+        animalList.forEach((a) -> {
+            if(a instanceof Mamal) {
+                System.out.print(a);
+            }
+        });
     }
 }
