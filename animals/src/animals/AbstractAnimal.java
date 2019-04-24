@@ -2,18 +2,41 @@ package animals;
 
 public abstract class AbstractAnimal
 {
-    public AbstractAnimal(int eat)
+    private int maxId = 0;
+    private int id;
+    private String name;
+    private int year;
+
+    public AbstractAnimal(String name, int year)
     {
-        this.eat = eat;
+        id = maxId++;
+        this.name = name;
+        this.year = year;
     }
-    public abstract String getName();
+
     public abstract String move();
     public abstract String breath();
-    public abstract int getNumber();
-    public abstract int getYearDiscovered();
+    public abstract String reproduce();
 
-    public void eat(int i)
+    public int getId()
     {
-        eat = eat + i;
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public int getYear()
+    {
+        return year;
+    }
+
+    @Override 
+    public String toString()
+    {
+        return "Name: " + name + "\n" + 
+               "Year: " + year + "\n";
     }
 }
